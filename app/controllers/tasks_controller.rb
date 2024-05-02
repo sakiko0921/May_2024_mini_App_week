@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[destroy]
 
   def index
-    @tasks = current_user.tasks.recent
+    @tasks = current_user.tasks
   end
 
   def new
