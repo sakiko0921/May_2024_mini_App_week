@@ -1,13 +1,25 @@
-<div class='position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light'>
-  <div class='top-wrapper'>
-    <div class='top-inner-text'>
-      <h1>おてつだいノート</h1>
+<div class='position-relative overflow-hidden p-3 text-end bg-warning'>
+  <div class='position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light'>
+    <div class='top-wrapper'>
+      <div class='top-inner-text'>
+        <p>
+          <%= image_tag 'hiragana_05_o.png' %>
+          <%= image_tag 'hiragana_34_te.png' %>
+          <%= image_tag 'hiragana_33_tsu.png' %>
+          <%= image_tag 'hiragana_36_da.png' %>
+          <%= image_tag 'hiragana_02_i.png' %>
+        </p>
+        <p>
+          <%= image_tag 'katakana_45_no.png' %>
+          <%= image_tag 'hoka_06_yokobou.png' %>
+          <%= image_tag 'katakana_35_to.png' %>
+        </p>
+      </div>
+      <div class='top-inner-image p-3 p-md-3 m-md-3'>
+        <h2>おてつだいをしておこづかいをためよう！</h2>
+      </div>
+      <%= link_to 'はじめる', '#', class: 'btn btn-lg btn-primary' %>
+      <%= link_to 'つづき', '#', class: 'btn btn-lg btn-primary' %>
     </div>
-    <div class='top-inner-image'>
-      <%= image_tag 'top_image.png' %>
-      <p>おてつだいをしておこづかいをためよう！</p>
-    </div>
-    <%= link_to 'はじめる', '#', class: 'btn btn-lg btn-primary' %>
-    <%= link_to 'つづき', '#', class: 'btn btn-lg btn-primary' %>
   </div>
 </div>
