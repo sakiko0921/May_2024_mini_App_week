@@ -1,44 +1,32 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[destroy]
 
-  # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.recent
   end
 
-  # POST /tasks or /tasks.json
+  def new
+    @task = Task.new
+  end
+
   def create
-    @task = Task.new(task_params)
-
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @task }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
+    @task = current_user.tasks.new(task_params)
+    if @task.save
+      redirect_to tasks_path, success: "タスクを登録しました"
+    else
+      flash.now[:warning] = "タスクの登録に失敗しました"
+      render :new, status: :unprocessable_entity
     end
   end
 
-  # DELETE /tasks/1 or /tasks/1.json
   def destroy
-    @task.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    @task.destroy
+    redirect_to tasks_path, success: "タスクを削除しました"
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_task
-      @task = Task.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def task_params
-      params.require(:task).permit(:name)
-    end
+  def task_params
+    params.require(:task).permit(:name, :description)
+  end
 end

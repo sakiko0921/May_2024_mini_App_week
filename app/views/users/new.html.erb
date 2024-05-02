@@ -8,6 +8,10 @@
             <%= form.text_field :name, class: "form-control" %>
         </div>
         <div class="mb-3">
+          <%= form.label 'メールアドレス', class: "form-label" %>
+          <%= form.email_field :email, class: "form-control" %>
+        </div>
+        <div class="mb-3">
             <%= form.label 'パスワード', class: "form-label" %>
             <%= form.password_field :password, class: "form-control", placeholder: '4から20文字以内の数字を入力してね' %>
         </div>
@@ -20,7 +24,7 @@
         </div>
       <% end %>
       <div class='text-center'>
-        <%= link_to '最初に戻る', '#' %>
+        <%= link_to '最初に戻る', root_path %>
       </div>
     </div>
   </div>
