@@ -1,8 +1,16 @@
-<%= form_with(model: task) do |form| %>
-
-  <div>
-    <%= form.text_field :name %>
-    <%= form.text_field :time %>
-    <%= form.submit 'スタート！' %>
-  </div>
-<% end %>
+<div class="row">
+  <div class="col-md-10 col-lg-8 mx-auto">
+    <%= form_with(model: task) do |form| %>
+      <div style="display:inline-flex">
+        <div class='mb-3'>
+          <%= form.text_field :name, class: 'form-control', placeholder: 'おてつだいを入力しよう' %>
+        </div>
+        <div class='mb-3'>
+          <%= form.text_field :time, class: 'form-control', placeholder: '時間を入力しよう' %>
+        </div>
+        <div class='mb-3'>
+          <%= form.submit 'スタート！', class: "btn btn-secondary" %>
+        </div>
+      </div>
+  <% end %>
+</div>

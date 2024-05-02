@@ -1,11 +1,15 @@
-<h1>おてつだい</h1>
-<%= render "form", task: @task %>
-
-<div id="tasks">
-  <% @tasks.each do |task| %>
-    <%= render task %>
-    <p>
-      <%= link_to "task", task %>
-    </p>
-  <% end %>
+<div class='container'>
+  <%= render "layouts/header" %>
+  <div class='position-relative overflow-hidden p-3 p-md-5 text-center bg-light'>
+    <h2>おてつだい登録</h2>
+    <%= render "form", task: @task %>
+    <div id="tasks">
+      <% @tasks.each do |task| %>
+        <%= render task %>
+        <p>
+          <%= link_to "task", task %>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>
