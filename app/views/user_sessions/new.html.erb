@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-lg-8 mx-auto">
-      <h1>新規登録</h1>
+      <h1>ログイン</h1>
       <%= form_with model: @user do |form| %>
         <div class="mb-3">
             <%= form.label 'ニックネーム', class: "form-label" %>
@@ -12,14 +12,11 @@
             <%= form.password_field :password, class: "form-control", placeholder: '4から20文字以内の数字を入力してね' %>
         </div>
         <div class="mb-3">
-            <%= form.label 'パスワードの確認', class: "form-label" %>
-            <%= form.password_field :password_confirmation, class: "form-control", placeholder: 'もう一度パスワードを入力してね' %>
-        </div>
-        <div class="mb-3">
-            <%= form.submit '登録', class: "btn btn-primary" %>
+            <%= form.submit 'ログイン', class: "btn btn-primary" %>
         </div>
       <% end %>
       <div class='text-center'>
+        <%= link_to '新規登録', '#' %>
         <%= link_to '最初に戻る', '#' %>
       </div>
     </div>
