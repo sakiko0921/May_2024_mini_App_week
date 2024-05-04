@@ -11,5 +11,5 @@ class User < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, length: { maximum: 20 }
 
-  has_many :tasks, dependent: :destroy
+  has_many :house_works, dependent: :destroy
 end

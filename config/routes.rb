@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "static_pages#top"
 
   resources :tasks, only: %i[index new create destroy]
+  resources :house_works, only: %i[index new create destroy]
   resources :results, only: %i[index]
   resources :users, only: %i[new create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

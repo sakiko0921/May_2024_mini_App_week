@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_02_173549) do
-  create_table "tasks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
+ActiveRecord::Schema[7.1].define(version: 2024_05_04_161151) do
+  create_table "house_works", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "time"
+    t.string "work_name", null: false
+    t.integer "time", null: false
     t.bigint "user_id"
-    t.index ["user_id"], name: "fk_rails_4d2a9e4d7e"
+    t.index ["user_id"], name: "fk_rails_9937e46989"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -30,5 +30,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_02_173549) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "tasks", "users"
+  add_foreign_key "house_works", "users"
 end
