@@ -1,7 +1,10 @@
 <div>
   <p>
-    <strong>Name:</strong>
+    <strong>項目：</strong>
     <%= house_work.work_name %>
+    <strong>時間：</strong>
+    <%= house_work.time %>
+    <strong>分</strong>
     <%= link_to house_work_path(house_work), id: "button-delete-#{house_work.id}", data: { turbo_method: :delete, turbo_confirm: '削除しますか' } do %>
       <i class="bi bi-trash-fill"></i>
     <% end %>

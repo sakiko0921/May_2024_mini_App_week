@@ -1,4 +1,6 @@
 class HouseWorksController < ApplicationController
+  before_action :set_house_work, only: [:destroy]
+
   def index
     @house_work = HouseWork.new
     @house_works = HouseWork.where(user_id: current_user.id).includes(:user).order(created_at: :desc)
@@ -16,7 +18,7 @@ class HouseWorksController < ApplicationController
   end
 
   def destroy
-    @house_work.destroy
+    @house_work.destroy!
     redirect_to house_works_path, success: "タスクを削除しました"
   end
 
@@ -24,5 +26,9 @@ class HouseWorksController < ApplicationController
 
   def house_work_params
     params.require(:house_work).permit(:work_name, :time)
+  end
+
+  def set_house_work
+    @house_work = current_user.house_works.find_by(id: params[:id])
   end
 end
