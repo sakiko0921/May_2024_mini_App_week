@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root "static_pages#top"
 
-  resources :tasks, only: %i[index new create destroy]
   resources :house_works, only: %i[index new create destroy]
   resources :results, only: %i[index]
   resources :users, only: %i[new create]
