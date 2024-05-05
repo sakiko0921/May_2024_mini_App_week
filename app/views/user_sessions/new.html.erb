@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-auto">
+      <h1>ログイン</h1>
+      <%= form_with url: login_path, local: true do |form| %>
+        <div class="mb-3">
+            <%= form.label 'メールアドレス', class: "form-label" %>
+            <%= form.text_field :email, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+            <%= form.label 'パスワード', class: "form-label" %>
+            <%= form.password_field :password, class: "form-control", placeholder: '4から20文字以内の数字を入力してね' %>
+        </div>
+        <div class="mb-3">
+            <%= form.submit 'ログイン', class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <div class='text-center'>
+        <%= link_to '新規登録', new_user_path %>
+        <%= link_to '最初に戻る', root_path %>
+      </div>
+    </div>
+  </div>
+</div>
