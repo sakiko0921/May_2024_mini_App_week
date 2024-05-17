@@ -9,6 +9,6 @@ class HouseWork < ApplicationRecord
   end
 
   def self.total_money(current_user)
-    total_time(current_user) / 60 * 850
+    total_time(current_user) * ( 850 / 60 )
   end
 end
